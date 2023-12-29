@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diabetes Aplication</title>
+  </head>
+  <body>
+    <h1>Diabetes Django Application</h1>
+    <hr />
+    {% if result %}
+    <h1>Result of the patient's report is {{result}}</h1>
+    {% endif %}
+
+    <form action="" method="post">
+      {% csrf_token %} Pregnancies :<input
+        type="number"
+        name="pregnancies"
+        required
+      />
+      <br />
+      Glucose :<input type="number" name="glucose" required /> <br />
+      BloodPressure :<input type="number" name="bloodPressure" required />
+      <br />
+      SkinThickness :<input type="number" name="skinThickness" required />
+      <br />
+      Insulin :<input type="number" name="insulin" required /> <br />
+      BMI :<input type="number" step="any" name="bMI" required /> <br />
+      DiabetesPedigreeFunction :<input
+        type="number"
+        step="any"
+        name="diabetesPedigreeFunction"
+        required
+      />
+      <br />
+      Age :<input type="number" name="age" required /> <br />
+      <input type="submit" />
+    </form>
+  </body>
+</html>

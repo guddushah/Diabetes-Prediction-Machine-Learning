@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Predict</title>
+    <style>
+      body {
+        background-size: cover;
+        background-image: url("{% static 'F:\data-science\MeriSKILL\DJANGO_PROJECT\MLDeployment\static\images\predict.jpg' %}");
+      }
+
+      .main {
+        position: fixed;
+        top: 200px;
+        left: 450px;
+        width: 550px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        align-items: center;
+        padding: 1%;
+      }
+      h1 {
+        color: #0086b3;
+        font-size: 25px;
+        font-weight: bold;
+      }
+      input[type="submit"] {
+        background-color: #4dc3ff;
+        border: 2px;
+        color: white;
+        padding: 8px 16px;
+        cursor: pointer;
+        margin-top: 15px;
+      }
+      .center {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div align="center" class="main">
+      <h1>ENTER THE REPORT INFORMATION</h1>
+      <form action="result" method="post">
+        {% csrf_token %}
+        <table class="center">
+          <tr>
+            <td align="right">Pregnancies :</td>
+            <td align="left">
+              <input type="number" name="pregnancies" required />
+            </td>
+          </tr>
+          <tr>
+            <td align="right">Glucose :</td>
+            <td align="left">
+              <input type="number" name="glucose" required />
+            </td>
+          </tr>
+          <tr>
+            <td align="right">Blood Pressure :</td>
+            <td align="left">
+              <input type="number" name="bloodPressure" required />
+            </td>
+          </tr>
+          <tr>
+            <td align="right">Skin Thinkness :</td>
+            <td align="left">
+              <input type="number" name="skinThickness" required />
+            </td>
+          </tr>
+          <tr>
+            <td align="right">Insulin :</td>
+            <td align="left">
+              <input type="number" name="insulin" required />
+            </td>
+          </tr>
+          <tr>
+            <td align="right">BMI :</td>
+            <td align="left"><input type="number" step="any" name="bMI" /></td>
+          </tr>
+          <tr>
+            <td align="right">Diabetes Pedigree Function :</td>
+            <td align="left">
+              <input type="number" step="any" name="diabetesPedigreeFunction" />
+            </td>
+          </tr>
+          <tr>
+            <td align="right">Age :</td>
+            <td align="left"><input type="number" name="age" /></td>
+          </tr>
+        </table>
+        <input type="submit" />
+      </form>
+      Diabetes Result: {{result}}
+    </div>
+  </body>
+</html>
